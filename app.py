@@ -3,15 +3,15 @@ import cv2
 import time
 import random
 import os
-from flask_sqlalchemy import SQLAlchemy
+# from flask_sqlalchemy import SQLAlchemy
 import main
 
 from detect import Camera 
 app = Flask(__name__)
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:@localhost/my_data'
+# app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:@localhost/my_data'
 
-db = SQLAlchemy(app)
+# db = SQLAlchemy(app)
 # class Information(db.Model):
 # 	Sno = db.Column(db.Integer, primary_key=True,nullable=True)
 # 	First_Name = db.Column(db.String(80), unique=False,nullable=False)
@@ -19,11 +19,11 @@ db = SQLAlchemy(app)
 # 	City=db.Column(db.String(120), unique=False,nullable=False)
 # 	State=db.Column(db.String(120),nullable=False)
 # 	zip1=db.Column(db.Integer,nullable=False)
-class user_registration(db.Model):
-    Sno = db.Column(db.Integer, primary_key=True,nullable=True)
-    User_Name = db.Column(db.String(50), unique=False,nullable=False)
-    Email = db.Column(db.String(100), unique=False,nullable=False)
-    Password=db.Column(db.String(100), unique=False,nullable=False)
+# class user_registration(db.Model):
+#     Sno = db.Column(db.Integer, primary_key=True,nullable=True)
+#     User_Name = db.Column(db.String(50), unique=False,nullable=False)
+#     Email = db.Column(db.String(100), unique=False,nullable=False)
+#     Password=db.Column(db.String(100), unique=False,nullable=False)
 	    
 n=1
 @app.route('/',methods=['GET', 'POST'])
@@ -60,9 +60,9 @@ def api():
                     main.fun("Wrong Capatcha ")
             else:
                     #entry=Information(First_Name=First_Name,Last_name=Last_name,City=City,State=State,zip1=zip1)
-                    entry=user_registration(User_Name=User_Name,Email=Email,Password=Password)
-                    db.session.add(entry)
-                    db.session.commit()
+#                     entry=user_registration(User_Name=User_Name,Email=Email,Password=Password)
+#                     db.session.add(entry)
+#                     db.session.commit()
                     main.fun("Form Submitted ")
                     break
                  
