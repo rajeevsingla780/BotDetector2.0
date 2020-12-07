@@ -6,7 +6,7 @@ numpy>=1.9.2
 imutils==0.5.3
 opencv-python
 requests==2.25.0
-Jinja2==2.10.1
+
 Flask-SQLAlchemy
 mysqlclient
 
