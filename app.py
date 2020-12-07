@@ -1,5 +1,4 @@
 from flask import Flask, Response,render_template,redirect,request,url_for,flash
-import cv2
 import time
 import random
 import os
